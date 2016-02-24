@@ -22,7 +22,7 @@
             <div class="top-bar-left">
               <ul class="dropdown menu" data-dropdown-menu>
                 <li class="menu-text">Arboretum App</li>
-                <li><a href="#">Calendar</a></li>
+                <li><a href="index.html">Calendar</a></li>
                 <li><a href="/plants.html">Plants</a></li>
               </ul>
             </div>
@@ -37,87 +37,26 @@
       </div>
     </div>
 
-    <div class="row calendar">
-      <div class="row">
-        <div class="small-10">
-          <h1>Calendar</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="medium-8 columns"><iframe src="https://calendar.google.com/calendar/embed?title=Upcoming%20Arboretum%20Events&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=arborapp16%40gmail.com&amp;color=%231B887A&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FChicago" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></div>
-        <div class="medium-4 columns">
-          <div id="edit-pref" class="button-group">
-            <a class="button">Add</a>
-            <a class="button">Edit</a>
-            <a class="button">Remove</a>
-          </div>
-          <!-- <label for="edit-pref">Event</label> -->
-
-          <form class="" action="index.html" method="post">
-            <div class="row">
-              <div class="large-12 columns">
-                <label>Name of Event
-                  <input class="name" type="text" placeholder="Tree Hugging" />
-                </label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-6 columns">
-                <label>Start Date
-                  <input class="sd datepicker" type="text" placeholder="" />
-                </label>
-              </div>
-              <div class="large-6 columns">
-                <label>End Date
-                  <input class="ed datepicker" type="text" placeholder="" />
-                </label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-6 columns">
-                <label>Start Time
-                  <input class="st timepicker" type="text" placeholder="" />
-                </label>
-              </div>
-              <div class="large-6 columns">
-                <label>End Time
-                  <input class="et timepicker" type="text" placeholder="" />
-                </label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-12 columns">
-                <label>Description
-                  <textarea class="description" placeholder="Walk around, look at flowers, forget your troubles!"></textarea>
-                </label>
-                <!-- <button class="small hollow button" href="#">See more</button> -->
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="small-6 columns">
-                <label>Max Attendees
-                  <input type="text" placeholder="42" />
-                </label>
-              </div>
-              <div class="small-6 columns">
-                <label>Send notifications</label>
-                <input type="radio" name="notification" id="noti1" checked><label for="noti1">Yes</label>
-                <input type="radio" name="notification" id="noti2"><label for="noti2">No</label>
-              </div>
-            </div>
-
-            <button type="button" class="button submit">Submit</button>
-          </form>
-        </div>
+    <div class="row filter">
+      <div class="small-12">
+        <fieldset class="fieldset">
+          <legend>Filter by:</legend>
+          <h4>Type</h4>
+          <input id="flowers" type="checkbox"><label for="flowers">Flowers</label>
+          <input id="shrubs" type="checkbox"><label for="shrubs">Shrubs</label>
+          <input id="trees" type="checkbox"><label for="trees">Trees</label>
+          <h4>Color</h4>
+          <input id="color1" type="checkbox"><label for="color1">Red</label>
+          <input id="color2" type="checkbox"><label for="color2">Orange</label>
+          <input id="color3" type="checkbox"><label for="color3">Yellow</label>
+          <input id="color4" type="checkbox"><label for="color4">Green</label>
+          <input id="color5" type="checkbox"><label for="color5">Blue</label>
+          <input id="color6" type="checkbox"><label for="color6">Violet</label>
+        </fieldset>
       </div>
     </div>
 
-    <!-- <div class="row plants">
+    <div class="row plants">
       <div class="row">
         <div class="small-12">
           <h1>Plants</h1>
@@ -161,23 +100,49 @@
         <div class="small-6 medium-4 large-3 columns">
           <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
         </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
+        <div class="small-6 medium-4 large-3 columns">
+          <img class="thumbnail" src="http://placehold.it/300x300?text=Plant" alt="Just another plant.">
+        </div>
       </div>
-    </div> -->
-
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Calendar API</span>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
-    <script src="https://apis.google.com/js/client.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

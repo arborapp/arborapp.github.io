@@ -1,5 +1,14 @@
+.container {
+  background-color: $light-gray;
+  width: 100%
+}
+
 .calendar, .plants {
   margin-top: 3rem;
+
+  h1 {
+    margin-left: 1rem;
+  }
 }
 
 .ui-datepicker {
@@ -10,5 +19,15 @@
 
   > span {
     color: $white;
+  }
+}
+
+
+
+
+.filter {
+  h4 {
+    display: inline-block;
+    margin-right: .4rem;
   }
 }
