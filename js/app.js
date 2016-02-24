@@ -172,16 +172,25 @@ function loadCalendarApi() {
 }
 
 function buildRequest() {
+  var summary = document.querySelector('.name').innerHTML;
+  // TODO Location HTML
+  var location = document.querySelector('.name').innerHTML;
+  var startDate = document.querySelector('.sd').innerHTML;
+  var endDate = document.querySelector('.ed').innerHTML;
+  var startTime = document.querySelector('.st').innerHTML;
+  var endTime = document.querySelector('.et').innerHTML;
+  var description = document.querySelector('.description').innerHTML;
+
   var event = {
-    'summary': 'Google I/O 2015',
+    'summary': summary,
     'location': '800 Howard St., San Francisco, CA 94103',
-    'description': 'A chance to hear more about Google\'s developer products.',
+    'description': description,
     'start': {
-      'dateTime': '2016-02-11T09:00:00-07:00',
+      'dateTime': '2016-02-25T09:00:00-07:00',
       'timeZone': 'America/Los_Angeles'
     },
     'end': {
-      'dateTime': '2016-02-12T17:00:00-07:00',
+      'dateTime': '2016-02-26T17:00:00-07:00',
       'timeZone': 'America/Los_Angeles'
     },
     'recurrence': [
@@ -206,19 +215,21 @@ function buildRequest() {
 function submitRequest(e) {
   console.log(e);
   var request = gapi.client.calendar.events.insert({
-    'calendarId': 'arborapp16@gmail.com',
+    'calendarId': 'primary',
     'resource': e
   });
 
-  request.execute(function(e) {
+  request.execute(function(res) {
     // appendPre('Event created: ' + e.htmlLink);
+    console.log(res);
   });
 }
 
 $(document).foundation();
 
 $(document).ready(function() {
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({ minDate: 0, maxDate: "12M" });
+  $('.timepicker').timepicker();
 });
 
 $('.submit').on('click', function(event) {

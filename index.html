@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Arboretum App</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.css">
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
   <body>
@@ -51,7 +52,20 @@
             <div class="row">
               <div class="large-12 columns">
                 <label>Name of Event
-                  <input type="text" placeholder="Tree Hugging" />
+                  <input class="name" type="text" placeholder="Tree Hugging" />
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Start Date
+                  <input class="st datepicker" type="text" placeholder="" />
+                </label>
+              </div>
+              <div class="large-6 columns">
+                <label>End Date
+                  <input class="ed datepicker" type="text" placeholder="" />
                 </label>
               </div>
             </div>
@@ -59,12 +73,12 @@
             <div class="row">
               <div class="large-6 columns">
                 <label>Start Time
-                  <input class="datepicker" type="text" placeholder="" />
+                  <input class="st timepicker" type="text" placeholder="" />
                 </label>
               </div>
               <div class="large-6 columns">
                 <label>End Time
-                  <input class="datepicker" type="text" placeholder="" />
+                  <input class="et timepicker" type="text" placeholder="" />
                 </label>
               </div>
             </div>
@@ -72,7 +86,7 @@
             <div class="row">
               <div class="large-12 columns">
                 <label>Description
-                  <textarea placeholder="Walk around, look at flowers, forget your troubles!"></textarea>
+                  <textarea class="description" placeholder="Walk around, look at flowers, forget your troubles!"></textarea>
                 </label>
                 <!-- <button class="small hollow button" href="#">See more</button> -->
               </div>
@@ -157,6 +171,7 @@
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="https://apis.google.com/js/client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

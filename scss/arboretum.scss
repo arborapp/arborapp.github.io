@@ -1,3 +1,14 @@
 .calendar, .plants {
   margin-top: 3rem;
 }
+
+.ui-datepicker {
+  background-color: #555;
+}
+
+.ui-datepicker-title {
+
+  > span {
+    color: $white;
+  }
+}
