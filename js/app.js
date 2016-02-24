@@ -121,6 +121,28 @@ var CLIENT_ID = '148763818568-ip8cn4tge1cc332uva3t92n2tgmcordt.apps.googleuserco
 
 var SCOPES = ["https://www.googleapis.com/auth/calendar"];
 
+function parseDateTime(strDate, strTime) {
+  // Get date
+  strDate = strDate.split('\/');
+  var out = [strDate[2], strDate[0], strDate[1] ].join('-');
+  out += 'T';
+
+  // Get time
+  var timeOfDay = strTime.substring(strTime.length-2);
+  var time = strTime.slice(0,-2);
+  time = time.split(':');
+
+  if (timeOfDay == 'pm') {
+    time[0] = 12 + parseInt(time[0]);
+  }
+
+  out += [time[0], time[1], '00'].join(':');
+  out += '-06:00';
+
+  console.log(out);
+  return out;
+}
+
 /**
  * Check if current user has authorized this application.
  */
@@ -172,26 +194,30 @@ function loadCalendarApi() {
 }
 
 function buildRequest() {
-  var summary = document.querySelector('.name').innerHTML;
+  var summary = document.querySelector('.name').value;
   // TODO Location HTML
-  var location = document.querySelector('.name').innerHTML;
-  var startDate = document.querySelector('.sd').innerHTML;
-  var endDate = document.querySelector('.ed').innerHTML;
-  var startTime = document.querySelector('.st').innerHTML;
-  var endTime = document.querySelector('.et').innerHTML;
-  var description = document.querySelector('.description').innerHTML;
+  var location = document.querySelector('.name').value;
+  var startDate = document.querySelector('.sd').value;
+  var endDate = document.querySelector('.ed').value;
+  var startTime = document.querySelector('.st').value;
+  var endTime = document.querySelector('.et').value;
+  var description = document.querySelector('.description').value;
+
+  var fullStartDate = parseDateTime(startDate, startTime);
+  var fullEndDate = parseDateTime(endDate, endTime);
+
 
   var event = {
     'summary': summary,
-    'location': '800 Howard St., San Francisco, CA 94103',
+    'location': '2001 S Lincoln Ave, Urbana, IL 61802',
     'description': description,
     'start': {
-      'dateTime': '2016-02-25T09:00:00-07:00',
-      'timeZone': 'America/Los_Angeles'
+      'dateTime': fullStartDate,
+      'timeZone': 'America/Chicago'
     },
     'end': {
-      'dateTime': '2016-02-26T17:00:00-07:00',
-      'timeZone': 'America/Los_Angeles'
+      'dateTime': fullEndDate,
+      'timeZone': 'America/Chicago'
     },
     'recurrence': [
       'RRULE:FREQ=DAILY;COUNT=2'
@@ -229,7 +255,10 @@ $(document).foundation();
 
 $(document).ready(function() {
   $(".datepicker").datepicker({ minDate: 0, maxDate: "12M" });
-  $('.timepicker').timepicker();
+  $('.timepicker').timepicker({ useSelect: true,
+    'step': function(i) {
+        return (i%2) ? 15 : 45;
+    } });
 });
 
 $('.submit').on('click', function(event) {
