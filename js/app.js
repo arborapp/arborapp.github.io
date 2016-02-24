@@ -248,6 +248,8 @@ function submitRequest(e) {
   request.execute(function(res) {
     // appendPre('Event created: ' + e.htmlLink);
     console.log(res);
+    var iframe = document.querySelector('.gCal');
+    iframe.src = iframe.src;
   });
 }
 
