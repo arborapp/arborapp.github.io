@@ -3884,5 +3884,26 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
 
+<<<<<<< HEAD
 .calendar, .plants {
   margin-top: 3rem; }
+=======
+.container {
+  background-color: #e6e6e6;
+  width: 100%; }
+
+.calendar, .plants {
+  margin-top: 3rem; }
+  .calendar h1, .plants h1 {
+    margin-left: 1rem; }
+
+.ui-datepicker {
+  background-color: #555; }
+
+.ui-datepicker-title > span {
+  color: #fefefe; }
+
+.filter h4 {
+  display: inline-block;
+  margin-right: .4rem; }
+>>>>>>> ce93af742954f2daf4a5303d7abb26ff1d70c56d
