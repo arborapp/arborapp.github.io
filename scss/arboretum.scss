@@ -22,8 +22,38 @@
   }
 }
 
+.media {
+  color: $white;
+}
 
+.announcements {
+  margin-top: 2rem;
+  padding: 4rem 0 7rem 0;
+}
 
+#facebook {
+  &.active {
+    background-color: #3b5998;
+  }
+}
+
+#google {
+  &.active {
+    background-color: #dd4b39;
+  }
+}
+
+#twitter {
+  &.active {
+    background-color: #55acee;
+  }
+}
+
+#apps {
+  &.active {
+    background-color: $primary-color;
+  }
+}
 
 .filter {
   h4 {

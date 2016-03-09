@@ -118,8 +118,10 @@
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '148763818568-ip8cn4tge1cc332uva3t92n2tgmcordt.apps.googleusercontent.com';
-
 var SCOPES = ["https://www.googleapis.com/auth/calendar"];
+
+// My Firebase reference
+var myFirebaseRef = new Firebase("https://arboretum-admin-dash.firebaseio.com/");
 
 function parseDateTime(strDate, strTime) {
   // Get date
@@ -219,9 +221,6 @@ function buildRequest() {
       'dateTime': fullEndDate,
       'timeZone': 'America/Chicago'
     },
-    'recurrence': [
-      'RRULE:FREQ=DAILY;COUNT=2'
-    ],
     'attendees': [
       {'email': 'lpage@example.com'},
       {'email': 'sbrin@example.com'}
@@ -253,6 +252,32 @@ function submitRequest(e) {
   });
 }
 
+function firebase() {
+}
+
+function mobileAnnouncement() {
+  var announcement = document.getElementById('announcementArea').value;
+  console.log(announcement);
+  myFirebaseRef.set({
+    timestamp: Date.now(),
+    message: announcement
+  });
+}
+
+function validateForm() {
+  var $activeButtons =  $('.active');
+  if ($activeButtons.length === 0) {
+    // TODO Throw error — you have to post to somewhere ya dingus
+    return;
+  }
+
+  // TODO Check for other mediums to post to
+  // facebookAnnouncement();
+  // googleplusAnnouncement();
+  // twitterAnnouncement();
+  mobileAnnouncement();
+}
+
 $(document).foundation();
 
 $(document).ready(function() {
@@ -261,8 +286,26 @@ $(document).ready(function() {
     'step': function(i) {
         return (i%2) ? 15 : 45;
     } });
+
+  firebase();
 });
 
 $('.submit').on('click', function(event) {
   handleAuthClick(event);
+});
+
+$('.media button:not(.submit)').on('click', function(e) {
+  console.log(e);
+  $(this).toggleClass('active');
+  e.preventDefault();
+
+  // TODO Show error message — over character count
+  if (e.target.name == 'twitter') {
+    if ($(this).hasClass('active')) {
+      $('#announcementArea').attr('maxlength', '140');
+    }
+    else {
+      $('#announcementArea').removeAttr('maxlength');
+    }
+  }
 });

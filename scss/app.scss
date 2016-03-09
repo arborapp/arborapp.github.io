@@ -14,7 +14,7 @@
 @include foundation-accordion;
 @include foundation-accordion-menu;
 @include foundation-badge;
-@include foundation-breadcrumbs;
+// @include foundation-breadcrumbs;
 @include foundation-button-group;
 @include foundation-callout;
 @include foundation-close-button;
@@ -25,10 +25,10 @@
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-menu;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
+// @include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
 @include foundation-slider;
 @include foundation-sticky;
 @include foundation-reveal;
@@ -42,4 +42,5 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
 @import 'arboretum';
