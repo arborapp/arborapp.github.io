@@ -3884,10 +3884,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
 
-<<<<<<< HEAD
 .calendar, .plants {
   margin-top: 3rem; }
-=======
+  
 .container {
   background-color: #e6e6e6;
   width: 100%; }
@@ -3906,4 +3905,3 @@ table.hover tr:nth-of-type(even):hover {
 .filter h4 {
   display: inline-block;
   margin-right: .4rem; }
->>>>>>> ce93af742954f2daf4a5303d7abb26ff1d70c56d
