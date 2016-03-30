@@ -139,14 +139,16 @@
             <button type="button" class="large button" onclick="validateForm()">Submit</button>
           </form>
         </div>
-        <div class="feed small-10 medium-3 large-4 columns">
+        <div class="small-10 medium-3 large-4 columns">
           <h2>Announcements</h2>
-          <script id="announcement-template" type="text/x-handlebars-template">
-            <div class="announcementItem">
-              <h5>{{message}}</h5>
-              <p>{{timestamp}}</p>
-            </div>
-          </script>
+          <div class="feed">
+            <script id="announcement-template" type="text/x-handlebars-template">
+              <div class="announcementItem">
+                <h5>{{message}}</h5>
+                <p>{{timestamp}}</p>
+              </div>
+            </script>
+          </div>
         </div>
       </div>
     </div>
