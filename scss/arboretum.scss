@@ -83,7 +83,7 @@
 
 .plant-item {
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
   transition: background-color .3s ease-out;
 
   &:hover {
@@ -92,6 +92,7 @@
 
   img {
     border-radius: 50%;
+    height: 105px;
     float: left;
     margin-right: .8rem;
   }
