@@ -122,13 +122,9 @@
 
     <div class="container announcements">
       <div class="row">
-        <div class="small-offset-1 small-10 large-offset-0 large-8">
+        <div class="small-offset-1 small-10 medium-offset-1 medium-9 large-offset-0 large-8 columns">
           <h1>General Announcements</h1>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="small-offset-1 small-10 large-offset-0 large-8">
           <form data-abide>
             <label for="announcementArea">This text will appear in the body of the announcement.</label>
             <textarea id="announcementArea" placeholder="Thanks for stopping by! You're always welcome at the Arboretum." required></textarea>
@@ -142,6 +138,17 @@
 
             <button type="button" class="large button" onclick="validateForm()">Submit</button>
           </form>
+        </div>
+        <div class="small-10 medium-3 large-4 columns">
+          <h2>Announcements</h2>
+          <div class="feed">
+            <script id="announcement-template" type="text/x-handlebars-template">
+              <div class="announcementItem">
+                <h5>{{message}}</h5>
+                <p>{{timestamp}}</p>
+              </div>
+            </script>
+          </div>
         </div>
       </div>
     </div>
@@ -161,6 +168,7 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="https://apis.google.com/js/client.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

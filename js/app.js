@@ -119,6 +119,22 @@
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '148763818568-ip8cn4tge1cc332uva3t92n2tgmcordt.apps.googleusercontent.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar"];
+var source   = $("#announcement-template").html();
+var template = Handlebars.compile(source);
+var monthMap = {
+  0: "Jan",
+  1: "Feb",
+  2: "Mar",
+  3: "Apr",
+  4: "May",
+  5: "Jun",
+  6: "Jul",
+  7: "Aug",
+  8: "Sep",
+  9: "Oct",
+  10: "Nov",
+  11: "Dec"
+};
 
 // My Firebase reference
 var myFirebaseRef = new Firebase("https://arboretum-admin-dash.firebaseio.com/");
@@ -258,7 +274,7 @@ function firebase() {
 function mobileAnnouncement() {
   var announcement = document.getElementById('announcementArea').value;
   console.log(announcement);
-  myFirebaseRef.set({
+  myFirebaseRef.push({
     timestamp: Date.now(),
     message: announcement
   });
@@ -288,6 +304,27 @@ $(document).ready(function() {
     } });
 
   firebase();
+});
+
+myFirebaseRef.on("child_added", function(snapshot) {
+  var announcements = snapshot.val();
+  console.log(announcements);
+
+  var date = new Date(announcements.timestamp*1000);
+  var prettyDate = "";
+  console.dir(date);
+  prettyDate += monthMap[date.getMonth()] + " " + date.getDate() + ", ";
+  prettyDate += date.getHours() + ":" + date.getMinutes();
+
+  var context = {
+    message: announcements.message,
+    timestamp: prettyDate
+  };
+  var html = template(context);
+  $('.feed').append(html);
+
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
 });
 
 $('.submit').on('click', function(event) {

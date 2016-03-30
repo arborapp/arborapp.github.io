@@ -13,7 +13,8 @@
     "motion-ui": "~1.1.0",
     "jquery-ui": "^1.11.4",
     "firebase": "^2.4.1",
-    "foundation-icon-fonts": "*"
+    "foundation-icon-fonts": "*",
+    "handlebars": "^4.0.5"
   },
   "ignore": [
     "**/.*",
