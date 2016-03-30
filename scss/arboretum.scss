@@ -55,6 +55,22 @@
   }
 }
 
+.feed {
+  max-height: 40rem;
+  overflow: scroll;
+}
+
+.announcementItem {
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 2px;
+  padding: .4rem .6rem;
+
+  p {
+    color: #333;
+  }
+}
+
 .filter {
   h4 {
     display: inline-block;
