@@ -139,6 +139,7 @@ var monthMap = {
 // My Firebase reference
 var myFirebaseRef = new Firebase("https://arboretum-admin-dash.firebaseio.com/");
 
+// TODO off by one error
 function parseDateTime(strDate, strTime) {
   // Get date
   strDate = strDate.split('\/');
@@ -213,8 +214,7 @@ function loadCalendarApi() {
 
 function buildRequest() {
   var summary = document.querySelector('.name').value;
-  // TODO Location HTML
-  var location = document.querySelector('.name').value;
+  var location = document.querySelector('.location').value;
   var startDate = document.querySelector('.sd').value;
   var endDate = document.querySelector('.ed').value;
   var startTime = document.querySelector('.st').value;
@@ -227,7 +227,7 @@ function buildRequest() {
 
   var event = {
     'summary': summary,
-    'location': '2001 S Lincoln Ave, Urbana, IL 61802',
+    'location': location,
     'description': description,
     'start': {
       'dateTime': fullStartDate,
@@ -237,17 +237,8 @@ function buildRequest() {
       'dateTime': fullEndDate,
       'timeZone': 'America/Chicago'
     },
-    'attendees': [
-      {'email': 'lpage@example.com'},
-      {'email': 'sbrin@example.com'}
-    ],
-    'reminders': {
-      'useDefault': false,
-      'overrides': [
-        {'method': 'email', 'minutes': 24 * 60},
-        {'method': 'popup', 'minutes': 10}
-      ]
-    }
+    'attendees': [],
+    'reminders': {}
   };
 
   submitRequest(event);
