@@ -61,9 +61,10 @@
 }
 
 .announcementItem {
-  background-color: #fff;
+  background-color: #fcfcfc;
   border-bottom: 1px solid #e6e6e6;
   border-radius: 2px;
+  max-width: 25rem;
   padding: .4rem .6rem;
 
   p {

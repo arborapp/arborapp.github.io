@@ -122,36 +122,52 @@
 
     <div class="container announcements">
       <div class="row">
-        <div class="small-offset-1 small-10 medium-offset-1 medium-9 large-offset-0 large-8 columns">
-          <h1>General Announcements</h1>
+        <div class="small-offset-1 small-10 medium-offset-1 medium-9 large-offset-0 large-6 columns">
+          <div class="row">
+            <div class="small-12 columns">
+              <h1>General Announcements</h1>
+              <form data-abide>
+                <label for="announcementArea">This text will appear in the body of the announcement.</label>
+                <textarea id="announcementArea" placeholder="Thanks for stopping by! You're always welcome at the Arboretum." required></textarea>
 
-          <form data-abide>
-            <label for="announcementArea">This text will appear in the body of the announcement.</label>
-            <textarea id="announcementArea" placeholder="Thanks for stopping by! You're always welcome at the Arboretum." required></textarea>
+                <div class="media button-group">
+                  <button name="facebook" type="button" id="facebook" class="secondary button">Facebook <i class="fa fa-facebook fa-lg"></i></button>
+                  <button name="google" type="button" id="google" class="secondary button">Google+ <i class="fa fa-google-plus fa-lg"></i></button>
+                  <button name="twitter" type="button" id="twitter" class="secondary button">Twitter <i class="fa fa-twitter fa-lg"></i></button>
+                  <button name="apps" type="button" id="apps" class="secondary button active">Mobile Apps <i class="fa fa-mobile fa-lg"></i></button>
+                </div>
 
-            <div class="media button-group">
-              <button name="facebook" type="button" id="facebook" class="secondary button">Facebook <i class="fa fa-facebook fa-lg"></i></button>
-              <button name="google" type="button" id="google" class="secondary button">Google+ <i class="fa fa-google-plus fa-lg"></i></button>
-              <button name="twitter" type="button" id="twitter" class="secondary button">Twitter <i class="fa fa-twitter fa-lg"></i></button>
-              <button name="apps" type="button" id="apps" class="secondary button active">Mobile Apps <i class="fa fa-mobile fa-lg"></i></button>
+                <button type="button" class="large button" onclick="validateForm()">Submit</button>
+              </form>
             </div>
-
-            <button type="button" class="large button" onclick="validateForm()">Submit</button>
-          </form>
-        </div>
-        <div class="small-10 medium-3 large-4 columns">
-          <h2>Announcements</h2>
-          <div class="feed">
-            <script id="announcement-template" type="text/x-handlebars-template">
-              <div class="announcementItem">
-                <h5>{{message}}</h5>
-                <p>{{timestamp}}</p>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <h2>Announcements</h2>
+              <div class="feed">
+                <script id="announcement-template" type="text/x-handlebars-template">
+                  <div class="announcementItem">
+                    <h5>{{message}}</h5>
+                    <p>{{timestamp}}</p>
+                  </div>
+                </script>
               </div>
-            </script>
+            </div>
+          </div>
+        </div>
+        <div class="small-10 medium-3 large-6 columns">
+          <div class="app-copy">
+            <h1>App Copy</h1>
+            <textarea class="copy" name="name" rows="8" cols="40"></textarea>
+            <button type="button" class="large button" onclick="submitCopy()">Submit</button>
           </div>
         </div>
       </div>
     </div>
+
+    <footer>
+      <h6><small>Lawrence Humphrey © 2016</small></h6>
+    </footer>
 
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>

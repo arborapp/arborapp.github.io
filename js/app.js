@@ -138,6 +138,8 @@ var monthMap = {
 
 // My Firebase reference
 var myFirebaseRef = new Firebase("https://arboretum-admin-dash.firebaseio.com/");
+var announcementRef = new Firebase(myFirebaseRef + "announcements/");
+var appCopyRef = new Firebase(myFirebaseRef + "app/");
 
 // TODO off by one error
 function parseDateTime(strDate, strTime) {
@@ -160,6 +162,12 @@ function parseDateTime(strDate, strTime) {
 
   console.log(out);
   return out;
+}
+
+function submitCopy() {
+  appCopyRef.set({
+    message: document.querySelector('.copy').value
+  });
 }
 
 /**
@@ -265,7 +273,7 @@ function firebase() {
 function mobileAnnouncement() {
   var announcement = document.getElementById('announcementArea').value;
   console.log(announcement);
-  myFirebaseRef.push({
+  announcementRef.push({
     timestamp: Date.now(),
     message: announcement
   });
@@ -293,11 +301,9 @@ $(document).ready(function() {
     'step': function(i) {
         return (i%2) ? 15 : 45;
     } });
-
-  firebase();
 });
 
-myFirebaseRef.on("child_added", function(snapshot) {
+announcementRef.on("child_added", function(snapshot) {
   var announcements = snapshot.val();
   console.log(announcements);
 
@@ -316,6 +322,10 @@ myFirebaseRef.on("child_added", function(snapshot) {
 
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
+});
+
+appCopyRef.on("value", function(snapshot) {
+  document.querySelector('.copy').innerHTML = snapshot.val().message;
 });
 
 $('.submit').on('click', function(event) {
