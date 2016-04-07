@@ -495,11 +495,11 @@ $show-header-for-stacked: false;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
-$tab-background-active: $light-gray;
-$tab-border: $light-gray;
-$tab-item-color: foreground($tab-background, $primary-color);
-$tab-item-background-hover: $white;
+$tab-background: $dark-primary-color;
+$tab-background-active: $dark-primary-color;
+$tab-border: $dark-primary-color;
+$tab-item-color: foreground($tab-background, $white);
+$tab-item-background-hover: darken($dark-primary-color, 2%);
 $tab-item-padding: 1.25rem 1.5rem;
 $tab-expand-max: 6;
 $tab-content-background: $white;
@@ -520,7 +520,7 @@ $thumbnail-radius: $global-radius;
 // 33. Title Bar
 // -------------
 
-$titlebar-background: $black;
+$titlebar-background: $dark-primary-color;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -546,6 +546,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $dark-primary-color;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

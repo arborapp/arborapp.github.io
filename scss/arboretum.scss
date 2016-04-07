@@ -1,6 +1,21 @@
 .container {
-  background-color: $light-gray;
   width: 100%
+}
+
+nav.container {
+  background-color: $dark-primary-color;
+
+  ul {
+    border: none;
+  }
+
+  li {
+    color: #fff;
+  }
+}
+
+.is-active {
+  border-bottom: 3px solid #fff;
 }
 
 .calendar, .plants {
@@ -28,7 +43,6 @@
 
 .announcements {
   margin-top: 2rem;
-  padding: 4rem 0 7rem 0;
 }
 
 #facebook {

@@ -119,8 +119,10 @@
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '148763818568-ip8cn4tge1cc332uva3t92n2tgmcordt.apps.googleusercontent.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar"];
-var source   = $("#announcement-template").html();
-var template = Handlebars.compile(source);
+
+var announcementSource   = $("#announcement-template").html();
+var announcemenTemplate = Handlebars.compile(announcementSource);
+
 var monthMap = {
   0: "Jan",
   1: "Feb",
@@ -317,7 +319,7 @@ announcementRef.on("child_added", function(snapshot) {
     message: announcements.message,
     timestamp: prettyDate
   };
-  var html = template(context);
+  var html = announcemenTemplate(context);
   $('.feed').append(html);
 
 }, function (errorObject) {

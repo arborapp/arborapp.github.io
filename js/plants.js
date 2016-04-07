@@ -1,5 +1,5 @@
-var source   = $("#plant-template").html();
-var template = Handlebars.compile(source);
+var plantSource = $("#plant-template").html();
+var plantTemplate = Handlebars.compile(plantSource);
 var plants = [];
 
 function showPlants(json){
@@ -14,7 +14,7 @@ function showPlants(json){
       image: '<img src="http://placehold.it/150?text=Image+Unavailable" alt=""'
     };
     context.push(plant);
-    var html = template(plant);
+    var html = plantTemplate(plant);
     plants.push(html);
   }
 
@@ -40,8 +40,6 @@ function getPlants() {
     console.log( "complete" );
   });
 }
-
-$(document).foundation();
 
 $(document).ready(function() {
   getPlants();
