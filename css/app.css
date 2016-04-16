@@ -3602,9 +3602,9 @@ nav.container {
 .is-active {
   border-bottom: 3px solid #fff; }
 
-.calendar, .plants {
+.calendar {
   margin-top: 3rem; }
-  .calendar h1, .plants h1 {
+  .calendar h1 {
     margin-left: 1rem; }
 
 .ui-datepicker {
@@ -3631,6 +3631,22 @@ nav.container {
 #apps.active {
   background-color: #8BC34A; }
 
+@-webkit-keyframes submitted {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes submitted {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 .feed {
   max-height: 400px;
   overflow: scroll; }
@@ -3647,6 +3663,26 @@ nav.container {
 .filter h4 {
   display: inline-block;
   margin-right: .4rem; }
+
+.announcementLabel:after {
+  color: #689F38;
+  content: " Submitted!";
+  opacity: 0; }
+
+.announcementLabel.submitted:after {
+  -webkit-animation: submitted 1300ms;
+  /* Safari 4+ */
+  /* Fx 5+ */
+  /* Opera 12+ */
+  animation: submitted 1300ms;
+  /* IE 10+, Fx 29+ */
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in; }
+
+.plants {
+  margin-top: 3rem; }
+  .plants h1 {
+    margin-left: 1rem; }
 
 .plant-item {
   cursor: pointer;

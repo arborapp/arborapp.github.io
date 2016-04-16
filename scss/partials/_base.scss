@@ -1,0 +1,20 @@
+.container {
+  width: 100%
+}
+
+nav.container {
+  background-color: $dark-primary-color;
+
+  ul {
+    border: none;
+  }
+
+  li {
+    color: #fff;
+  }
+}
+
+// Nav active state
+.is-active {
+  border-bottom: 3px solid #fff;
+}

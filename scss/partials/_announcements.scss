@@ -1,0 +1,63 @@
+@-webkit-keyframes submitted {
+  0%   { opacity: 0; }
+  1%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes submitted {
+  0%   { opacity: 0; }
+  1%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes submitted {
+  0%   { opacity: 0; }
+  1%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes submitted {
+  0%   { opacity: 0; }
+  1%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.feed {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.announcementItem {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 2px;
+  max-width: 25rem;
+  padding: .4rem .6rem;
+
+  p {
+    color: #333;
+  }
+}
+
+.filter {
+  h4 {
+    display: inline-block;
+    margin-right: .4rem;
+  }
+}
+
+.announcementLabel {
+
+  &:after {
+    color: $dark-primary-color;
+    content: " Submitted!";
+    opacity: 0;
+  }
+
+  &.submitted {
+    &:after {
+      -webkit-animation: submitted 1300ms; /* Safari 4+ */
+      -moz-animation:    submitted 1300ms; /* Fx 5+ */
+      -o-animation:      submitted 1300ms; /* Opera 12+ */
+      animation:         submitted 1300ms; /* IE 10+, Fx 29+ */
+      animation-timing-function: ease-in;
+    }
+  }
+}

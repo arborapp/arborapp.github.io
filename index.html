@@ -58,18 +58,20 @@
             <iframe class="gCal" src="https://calendar.google.com/calendar/embed?title=Upcoming%20Arboretum%20Events&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=arborapp16%40gmail.com&amp;color=%231B887A&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FChicago" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
           </div>
           <div class="medium-4 columns">
-            <div id="edit-pref" class="button-group">
+            <!-- <div id="edit-pref" class="button-group">
               <a class="button">Add</a>
               <a class="button">Edit</a>
               <a class="button">Remove</a>
-            </div>
+            </div> -->
             <!-- <label for="edit-pref">Event</label> -->
+
+            <h2>Add an Event</h2>
 
             <form class="" action="index.html" method="post">
               <div class="row">
                 <div class="large-12 columns">
                   <label>Name of Event
-                    <input class="name" type="text" placeholder="Tree Hugging" />
+                    <input class="name" type="text" placeholder="Tree Hugging" required />
                   </label>
                 </div>
               </div>
@@ -77,12 +79,12 @@
               <div class="row">
                 <div class="large-6 columns">
                   <label>Start Date
-                    <input class="sd datepicker" type="text" placeholder="" />
+                    <input class="sd datepicker" type="text" placeholder="" required />
                   </label>
                 </div>
                 <div class="large-6 columns">
                   <label>End Date
-                    <input class="ed datepicker" type="text" placeholder="" />
+                    <input class="ed datepicker" type="text" placeholder="" required />
                   </label>
                 </div>
               </div>
@@ -90,12 +92,12 @@
               <div class="row">
                 <div class="large-6 columns">
                   <label>Start Time
-                    <input class="st timepicker" type="text" placeholder="" />
+                    <input class="st timepicker" type="text" required />
                   </label>
                 </div>
                 <div class="large-6 columns">
                   <label>End Time
-                    <input class="et timepicker" type="text" placeholder="" />
+                    <input class="et timepicker" type="text" required />
                   </label>
                 </div>
               </div>
@@ -117,12 +119,12 @@
                 </div>
                 <div class="small-5 columns">
                   <label>Notifications</label>
-                  <input type="radio" name="notification" id="noti1" checked><label for="noti1">Yes</label>
-                  <input type="radio" name="notification" id="noti2"><label for="noti2">No</label>
+                  <input type="radio" name="notification" id="noti1"><label for="noti1">Yes</label>
+                  <input type="radio" name="notification" id="noti2" checked><label for="noti2">No</label>
                 </div>
               </div>
 
-              <button type="button" class="button submit">Submit</button>
+              <button type="button" class="button large submit">Submit</button>
             </form>
           </div>
         </div>
@@ -137,7 +139,7 @@
                 <div class="small-12 columns">
                   <h1>General Announcements</h1>
                   <form data-abide>
-                    <label for="announcementArea">This text will appear in the body of the announcement.</label>
+                    <label class="announcementLabel" for="announcementArea">This text will appear in the body of the announcement.</label>
                     <textarea id="announcementArea" placeholder="Thanks for stopping by! You're always welcome at the Arboretum." required></textarea>
 
                     <div class="media button-group">

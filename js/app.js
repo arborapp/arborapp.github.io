@@ -273,12 +273,19 @@ function firebase() {
 }
 
 function mobileAnnouncement() {
-  var announcement = document.getElementById('announcementArea').value;
-  console.log(announcement);
+  var announcementArea = document.getElementById('announcementArea');
+  var announcement = announcementArea.value;
+
   announcementRef.push({
     timestamp: Date.now(),
     message: announcement
+  }, function() {
+    announcementArea.value = "";
+
+    var success = document.querySelector('.announcementLabel').classList.add('submitted');
   });
+
+
 }
 
 function validateForm() {
