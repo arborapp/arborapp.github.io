@@ -3602,10 +3602,6 @@ nav.container {
 .is-active {
   border-bottom: 3px solid #fff; }
 
-@media only screen and (max-width: 640px) {
-  .tabs-title {
-    display: block; } }
-
 .calendar {
   margin-top: 3rem; }
   .calendar h1 {
@@ -3653,6 +3649,11 @@ nav.container {
   100% {
     opacity: 0; } }
 
+.feed-container {
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+  margin-bottom: 3rem; }
+
 .feed {
   max-height: 400px;
   overflow: scroll; }
@@ -3661,14 +3662,26 @@ nav.container {
   background-color: #fcfcfc;
   border-bottom: 1px solid #e6e6e6;
   border-radius: 2px;
-  max-width: 25rem;
-  padding: .4rem .6rem; }
+  max-width: 45rem;
+  padding: .7rem 0;
+  width: 100%; }
   .announcementItem p {
     color: #333; }
 
-.filter h4 {
-  display: inline-block;
-  margin-right: .4rem; }
+.announcements {
+  margin-bottom: 4rem; }
+  .announcements:after {
+    border-top: 2px solid #ccc;
+    content: '';
+    left: 0;
+    max-width: 450px;
+    position: relative;
+    top: 5px;
+    width: 80%; }
+
+@media only screen and (max-width: 1024px) {
+  .announcements::after {
+    left: 10%; } }
 
 .announcementLabel:after {
   color: #689F38;
@@ -3684,6 +3697,9 @@ nav.container {
   /* IE 10+, Fx 29+ */
   -webkit-animation-timing-function: ease-in;
           animation-timing-function: ease-in; }
+
+.app-copy {
+  margin-top: 4rem; }
 
 .plants {
   margin-top: 3rem; }
