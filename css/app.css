@@ -3602,10 +3602,16 @@ nav.container {
 .is-active {
   border-bottom: 3px solid #fff; }
 
+@media only screen and (max-width: 640px) {
+  .tabs-title {
+    display: block; } }
+
 .calendar {
   margin-top: 3rem; }
   .calendar h1 {
     margin-left: 1rem; }
+  .calendar iframe {
+    height: 85vmin !important; }
 
 .ui-datepicker {
   background-color: #555; }
