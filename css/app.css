@@ -3602,6 +3602,9 @@ nav.container {
 .is-active {
   border-bottom: 3px solid #fff; }
 
+.menu > li > .signOut {
+  display: inline; }
+
 .calendar {
   margin-top: 3rem; }
   .calendar h1 {

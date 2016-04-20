@@ -18,3 +18,7 @@ nav.container {
 .is-active {
   border-bottom: 3px solid #fff;
 }
+
+.menu > li > .signOut {
+  display: inline;
+}

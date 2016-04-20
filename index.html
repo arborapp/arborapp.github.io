@@ -1,14 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="148763818568-ip8cn4tge1cc332uva3t92n2tgmcordt.apps.googleusercontent.com">
     <title>Arboretum App</title>
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
   <body>
     <nav class="container">
@@ -20,18 +18,9 @@
                 <li class="menu-text">Arboretum App</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-12">
-          <div class="top-bar">
-            <div class="top-bar-left">
-              <ul class="tabs dropdown menu" data-tabs id="example-tabs">
-                <li class="tabs-title is-active"><a href="#calendar" aria-selected="true">Calendar</a></li>
-                <li class="tabs-title"><a href="#announcements">Announcements</a></li>
-                <li class="tabs-title"><a href="#plants">Plants</a></li>
-                <!-- <li class="tabs-title"><a href="#landmarks">Landmarks</a></li> -->
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li class="menu-text"><a href="#" class="signOut" onclick="signOut()">Sign Out</a></li>
               </ul>
             </div>
           </div>
@@ -39,223 +28,47 @@
       </div>
     </nav>
 
-    <div class="tabs-content" data-tabs-content="example-tabs">
-      <div class="tabs-panel is-active" id="calendar">
-      <div class="row calendar">
-        <div class="row">
-          <div class="small-10">
-            <h1>Calendar</h1>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="medium-8 columns">
-            <iframe class="gCal" src="https://calendar.google.com/calendar/embed?title=Upcoming%20Arboretum%20Events&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=arborapp16%40gmail.com&amp;color=%231B887A&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FChicago" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-          </div>
-          <div class="medium-4 columns">
-            <!-- <div id="edit-pref" class="button-group">
-              <a class="button">Add</a>
-              <a class="button">Edit</a>
-              <a class="button">Remove</a>
-            </div> -->
-            <!-- <label for="edit-pref">Event</label> -->
-
-            <h2>Add an Event</h2>
-
-            <form class="" action="index.html" method="post">
-              <div class="row">
-                <div class="large-12 columns">
-                  <label>Name of Event
-                    <input class="name" type="text" placeholder="Tree Hugging" required />
-                  </label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="large-6 columns">
-                  <label>Start Date
-                    <input class="sd datepicker" type="text" placeholder="" required />
-                  </label>
-                </div>
-                <div class="large-6 columns">
-                  <label>End Date
-                    <input class="ed datepicker" type="text" placeholder="" required />
-                  </label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="large-6 columns">
-                  <label>Start Time
-                    <input class="st timepicker" type="text" required />
-                  </label>
-                </div>
-                <div class="large-6 columns">
-                  <label>End Time
-                    <input class="et timepicker" type="text" required />
-                  </label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="small-12 columns">
-                  <label>Description
-                    <textarea class="description" placeholder="Walk around, look at flowers, forget your troubles!"></textarea>
-                  </label>
-                  <!-- <button class="small hollow button" href="#">See more</button> -->
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="small-12 medium-12 large-7 columns">
-                  <label>Location
-                    <input class="location" type="text" placeholder="The Arboretum" />
-                  </label>
-                </div>
-                <div class="small-12 medium-12 large-5 columns">
-                  <label>Notifications</label>
-                  <input type="radio" name="notification" id="noti1"><label for="noti1">Yes</label>
-                  <input type="radio" name="notification" id="noti2" checked><label for="noti2">No</label>
-                </div>
-              </div>
-
-              <button type="button" class="button large submit">Submit</button>
-            </form>
-          </div>
-        </div>
+    <div class="row">
+      <div class="small-12">
+        <h1>Sign in with Google</h1>
+      </div>
+      <div class="small-12">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </div>
     </div>
-
-    <div class="tabs-panel" id="announcements">
-      <div class="container">
-        <div class="row  announcements">
-          <div class="small-offset-1 small-10 medium-offset-1 medium-9 large-offset-0 large-6 columns">
-            <div class="row">
-              <div class="small-12 columns">
-                <h1>General Announcements</h1>
-                <form data-abide>
-                  <label class="announcementLabel" for="announcementArea">This text will appear in the body of the announcement.</label>
-                  <textarea id="announcementArea" placeholder="Thanks for stopping by! You're always welcome at the Arboretum." required></textarea>
-
-                  <div class="media button-group stacked-for-medium stacked-for-small">
-                    <button name="facebook" type="button" id="facebook" class="secondary button">Facebook <i class="fa fa-facebook fa-lg"></i></button>
-                    <button name="google" type="button" id="google" class="secondary button">Google+ <i class="fa fa-google-plus fa-lg"></i></button>
-                    <button name="twitter" type="button" id="twitter" class="secondary button">Twitter <i class="fa fa-twitter fa-lg"></i></button>
-                    <button name="apps" type="button" id="apps" class="secondary button active">Mobile Apps <i class="fa fa-mobile fa-lg"></i></button>
-                  </div>
-
-                  <button type="button" class="large button" onclick="validateForm()">Submit</button>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="feed-container small-offset-1 small-10 medium-offset-1 medium-10 large-offset-0 large-6 columns end">
-            <h2>Announcements</h2>
-            <div class="feed">
-              <script id="announcement-template" type="text/x-handlebars-template">
-                <div class="announcementItem">
-                  <h5>{{message}}</h5>
-                  <p>{{timestamp}}</p>
-                </div>
-              </script>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="small-offset-1 small-10 medium-offset-1 medium-10 large-offset-0 large-6 columns">
-            <div class="app-copy">
-              <h1>App Copy</h1>
-              <textarea class="copy" name="name" rows="8" cols="40"></textarea>
-              <button type="button" class="large button" onclick="submitCopy()">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-      <div class="tabs-panel" id="plants">
-        <div class="row filter">
-          <div class="small-12 medium-8 large-6">
-            <!-- <fieldset class="fieldset">
-              <legend>Filter by:</legend>
-              <h4>Type</h4>
-              <input id="flowers" type="checkbox"><label for="flowers">Flowers</label>
-              <input id="shrubs" type="checkbox"><label for="shrubs">Shrubs</label>
-              <input id="trees" type="checkbox"><label for="trees">Trees</label>
-              <h4>Color</h4>
-              <input id="color1" type="checkbox"><label for="color1">Red</label>
-              <input id="color2" type="checkbox"><label for="color2">Orange</label>
-              <input id="color3" type="checkbox"><label for="color3">Yellow</label>
-              <input id="color4" type="checkbox"><label for="color4">Green</label>
-              <input id="color5" type="checkbox"><label for="color5">Blue</label>
-              <input id="color6" type="checkbox"><label for="color6">Violet</label>
-            </fieldset> -->
-            <div class="input-group">
-              <span class="input-group-label">Search</span>
-              <input class="input-group-field" type="text" placeholder="Search by scientific name">
-              <div class="input-group-button">
-                <input type="submit" class="button" value="Submit">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row plants">
-          <div class="row">
-            <div class="small-12">
-              <h1>Plants</h1>
-            </div>
-          </div>
-
-          <div class="row plant-container">
-            <script id="plant-template" type="text/x-handlebars-template">
-              <div class="small-12 medium-6 columns plant-item">
-                <h5>{{sciName}}</h5>
-                <br>
-                <h6><em>{{comName}}</em></h6>
-              </div>
-            </script>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <!-- <div class="tabs-panel" id="landmarks">
-        <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-      </div> -->
-
-    </div>
-
-    <footer>
-      <h6 class="text-center"><small>Lawrence Humphrey © 2016</small></h6>
-    </footer>
-
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Calendar API</span>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
-    </div>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="bower_components/what-input/what-input.js"></script>
-    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="bower_components/firebase/firebase.js"></script>
-    <script src="https://apis.google.com/js/client.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.9/jquery.timepicker.min.js"></script>
-    <script src="bower_components/handlebars/handlebars.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/plants.js"></script>
+    <script>
+    var admin;
+    var myFirebaseRef = new Firebase("https://arboretum-admin-dash.firebaseio.com/accounts");
+
+    function onSignIn(googleUser) {
+      // Useful data for your client-side scripts:
+      var profile = googleUser.getBasicProfile();
+
+      if(profile.getEmail() === admin) {
+        admin = null;
+        window.location.href = location + "home.html";
+      }
+
+      else {
+        alert("If you are an admin, please try again.");
+      }
+    };
+
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    };
+
+    myFirebaseRef.once("value", function(snapshot) {
+      admin = snapshot.val().userid;
+    });
+    (function() {
+
+    })();
+    </script>
   </body>
 </html>
